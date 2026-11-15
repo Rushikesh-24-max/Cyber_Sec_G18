@@ -1,0 +1,17 @@
+{
+  "name": "student-portal-security-lab",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Five local web-security demonstrations for a group assignment",
+  "engines": { "node": ">=24.0.0" },
+  "scripts": {
+    "start": "node server.js",
+    "attacker": "node attacker/server.js",
+    "reset": "node database/reset.js",
+    "test": "node --test --test-concurrency=1"
+  },
+  "dependencies": {
+    "ejs": "3.1.10",
+    "express": "5.2.1"
+  }
+}

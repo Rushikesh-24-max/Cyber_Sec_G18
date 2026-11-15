@@ -1,0 +1,6 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Campus giveaway | CSRF demonstration</title><style>body{font:17px/1.7 system-ui;background:#f3f5f0;color:#20382f;margin:0;padding:10vh 24px}main{max-width:600px;margin:auto;background:white;padding:48px;border:1px solid #dbe1d8;border-radius:16px}small{color:#617165}h1{font-size:36px;line-height:1.2}a{display:inline-block;background:#245a46;color:white;padding:13px 22px;border-radius:8px;text-decoration:none}code{font-size:14px}p:last-child{font-size:14px}</style></head>
+<body><main><small>LOCAL CSRF DEMONSTRATION / PORT 4000</small><h1>A little campus perk.</h1><p>Follow this giveaway link to claim your student reward.</p>
+<a href="http://127.0.0.1:3000/profile/update?displayName=Changed%20by%20CSRF">Claim campus reward</a>
+<p>This intentionally deceptive link performs a top-level GET navigation to the portal. In vulnerable mode it changes the logged-in student's name to <strong>Changed by CSRF</strong>. No cookie theft or JavaScript is required.</p>
+<p>First start a session at <code>http://127.0.0.1:3000/profile</code>. Use <code>127.0.0.1</code> consistently. In protected mode the same link is rejected.</p></main></body></html>

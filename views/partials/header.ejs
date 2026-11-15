@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title><%= title %> | Student Portal</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar">
+    <a class="brand" href="/"><span class="brand-mark">S.</span><span>Student Portal<small>YOUR CAMPUS, CONNECTED</small></span></a>
+    <p class="nav-label">WORKSPACE</p>
+    <nav aria-label="Main navigation">
+      <% const links = [['/login', '01', 'Student login'], ['/network', '02', 'Network checker'], ['/search', '03', 'Notice search'], ['/feedback', '04', 'Feedback board'], ['/profile', '05', 'My profile']]; %>
+      <% links.forEach(([url, number, label]) => { %>
+        <a href="<%= url %>" class="nav-link <%= currentPath === url || (url !== '/' && currentPath.startsWith(url + '/')) ? 'active' : '' %>"><span><%= number %></span><%= label %></a>
+      <% }) %>
+    </nav>
+    <div class="sidebar-bottom"><span class="status-dot"></span> Local learning environment<p>Web Server Security<br>Group assignment · 2026</p></div>
+  </aside>
+  <div class="workspace">
+    <header class="topbar"><span>Campus workspace <span class="slash">/</span> <strong><%= title %></strong></span><span class="semester">AUTUMN 2026</span></header>
+    <main id="main-content">

@@ -1,0 +1,9 @@
+<%- include('partials/header', { title: 'My profile' }) %>
+<section class="page-heading compact"><div><p class="eyebrow">PERSONAL DETAILS</p><h1>Your campus identity.</h1><p class="lead">Keep your student display name up to date.</p></div><span class="page-index">05 / 05</span></section>
+<% if (error) { %><div class="alert error" role="alert"><%= error %></div><% } %>
+<div class="content-grid"><section class="panel">
+<% if (!loggedIn) { %><h2>Start your session</h2><p class="muted">Open a session for the fictional student account to edit its profile.</p><form method="post" action="/profile/session"><button type="submit">Start demo session →</button></form><p class="fine-print">Server restarts end demo sessions. Start a new one after changing a protection setting.</p>
+<% } else { %><div class="profile-identity"><span class="avatar large"><%= profile.display_name.charAt(0).toUpperCase() %></span><div><span class="tiny-label">CURRENT DISPLAY NAME</span><h2 id="current-name"><%= profile.display_name %></h2><span class="muted">student · Demo account</span></div></div>
+<form method="<%= protectedAction ? 'post' : 'get' %>" action="/profile/update"><% if (protectedAction) { %><input type="hidden" name="_csrf" value="<%= token %>"><% } %><label for="displayName">Display name</label><input id="displayName" name="displayName" value="<%= profile.display_name %>" maxlength="60" required><button type="submit">Save changes →</button></form><form class="logout-form" method="post" action="/profile/logout"><button class="button-subtle" type="submit">End demo session</button></form><% } %>
+</section><aside class="side-note"><p class="eyebrow">YOUR PROFILE</p><h2>A name<br>of your own.</h2><p>Your display name is saved in the local database. The profile session is separate from the login exercise.</p><p class="fine-print">Only a fictional account is used here. No real student information is required.</p></aside></div>
+<%- include('partials/footer') %>

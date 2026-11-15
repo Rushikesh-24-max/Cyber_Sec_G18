@@ -1,0 +1,7 @@
+<%- include('partials/header', { title: 'Network checker' }) %>
+<section class="page-heading compact"><div><p class="eyebrow">CAMPUS UTILITIES</p><h1>Check your connection.</h1><p class="lead">Send a single ping and view the response.</p></div><span class="page-index">02 / 05</span></section>
+<div class="content-grid"><section class="panel"><h2>IP connectivity check</h2><p class="muted">Enter an IP address to test.</p><form method="post" action="/network"><label for="host">IP address</label><input id="host" name="host" value="<%= host %>" maxlength="200" required spellcheck="false" placeholder="127.0.0.1"><button type="submit">Run check <span aria-hidden="true">→</span></button></form>
+<% if (error) { %><div class="alert error" role="alert"><%= error %></div><% } %>
+<% if (output !== null) { %><div class="output-heading"><span class="tiny-label">CHECK OUTPUT</span><span>Single request</span></div><pre class="terminal"><%= output %></pre><% } %></section>
+<aside class="side-note"><p class="eyebrow">QUICK TIP</p><h2>Start close<br>to home.</h2><p><code>127.0.0.1</code> is your own computer's loopback address. It is the simplest starting point for this local demonstration.</p><p class="fine-print">A failed ping can also mean a firewall blocks replies. It does not always mean the destination is offline.</p></aside></div>
+<%- include('partials/footer') %>

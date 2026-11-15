@@ -1,0 +1,8 @@
+<%- include('partials/header', { title: 'Student login' }) %>
+<section class="page-heading compact"><div><p class="eyebrow">ACCOUNT ACCESS</p><h1>Welcome back.</h1><p class="lead">Sign in to your campus account.</p></div><span class="page-index">01 / 05</span></section>
+<div class="content-grid"><section class="panel"><h2>Student sign in</h2><p class="muted">Use your student username and password.</p>
+<% if (error) { %><div class="alert error" role="alert"><%= error %></div><% } %>
+<% if (result) { %><div class="alert success" role="status"><strong>Login successful</strong><br>Welcome, <%= result.name %>. Your account was found.</div><% } else if (result === false) { %><div class="alert error" role="alert">Invalid username or password.</div><% } %>
+<form method="post" action="/login"><label for="username">Username</label><input id="username" name="username" value="<%= username %>" maxlength="200" autocomplete="username" required placeholder="Your student username"><label for="password">Password</label><input id="password" name="password" type="password" maxlength="200" autocomplete="current-password" required placeholder="Your password"><button type="submit">Sign in <span aria-hidden="true">→</span></button></form>
+</section><aside class="side-note"><p class="eyebrow">DEMO ACCOUNT</p><h2>A familiar place<br>to start.</h2><p>Use these fictional credentials to check normal sign-in behaviour.</p><dl><dt>Username</dt><dd><code>student</code></dd><dt>Password</dt><dd><code>campus123</code></dd></dl><p class="fine-print">This exercise shows a login result. The profile exercise has its own independent demo session.</p></aside></div>
+<%- include('partials/footer') %>
