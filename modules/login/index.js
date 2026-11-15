@@ -1,4 +1,4 @@
-// MEMBER 1: SQL injection / authentication bypass.
+// SQL injection / authentication bypass.
 const { Router } = require('express');
 module.exports = function loginModule(db, config) {
   const router = Router();

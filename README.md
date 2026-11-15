@@ -35,13 +35,13 @@ The code includes comments marking the flaw and fix. EJS uses `<%=` for escaped 
 
 Profile sessions are in memory, so **restarting ends them**. Start a fresh profile session after every restart. Profile data and comments persist in `database/portal.sqlite`. `lib/demo-session.js` uses random opaque session IDs, rotates them at demo sign-in, and expires them after two hours. It is a small lab helper, not a production authentication framework. Both profile modes use the same HttpOnly, SameSite=Lax cookie configuration, so the CSRF difference is the server-side mitigation.
 
-## Ownership declaration — replace these member labels before submission
+## Ownership declaration
 
-- Member 1 — Name / roll number: **to be filled by group**. Category: SQL injection. Variant: authentication bypass. Files: `modules/login/index.js`, `views/login.ejs`. Guide: `docs/member-1-sql.md`.
-- Member 2 — Name / roll number: **to be filled by group**. Category: OS command injection. Variant: in-band output. Files: `modules/network/index.js`, `views/network.ejs`. Guide: `docs/member-2-command.md`.
-- Member 3 — Name / roll number: **to be filled by group**. Category: XSS. Variant: reflected. Files: `modules/search/index.js`, `views/search.ejs`. Guide: `docs/member-3-reflected.md`.
-- Member 4 — Name / roll number: **to be filled by group**. Category: XSS. Variant: stored. Files: `modules/feedback/index.js`, `views/feedback.ejs`. Guide: `docs/member-4-stored.md`.
-- Member 5 — Name / roll number: **to be filled by group**. Category: CSRF. Variant: GET-based forged action. Files: `modules/profile/index.js`, `views/profile.ejs`, `attacker/`. Guide: `docs/member-5-csrf.md`.
+- Member 1 — **Rushikesh Talaviya (IIT2024049)**. Category: SQL injection. Variant: authentication bypass. Files: `modules/login/index.js`, `views/login.ejs`. Guide: `docs/member-1-sql.md`.
+- Member 2 — **Harin Savaliya (IIT2024051)**. Category: OS command injection. Variant: in-band output. Files: `modules/network/index.js`, `views/network.ejs`. Guide: `docs/member-2-command.md`.
+- Member 3 — **Akshat Agrawal (IIT2024102)**. Category: XSS. Variant: reflected. Files: `modules/search/index.js`, `views/search.ejs`. Guide: `docs/member-3-reflected.md`.
+- Member 4 — **Divyang (IIT2024107)**. Category: XSS. Variant: stored. Files: `modules/feedback/index.js`, `views/feedback.ejs`. Guide: `docs/member-4-stored.md`.
+- Member 5 — **Anish Reddy (IIT2024059)**. Category: CSRF. Variant: GET-based forged action. Files: `modules/profile/index.js`, `views/profile.ejs`, `attacker/`. Guide: `docs/member-5-csrf.md`.
 
 Shared infrastructure: `server.js`, `config.js`, `database/`, shared templates and CSS. Each member must understand, work through, and be able to explain their own implementation. Follow your course's authorship and AI-use requirements; don't claim generated code was personally written without doing the required individual work.
 

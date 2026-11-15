@@ -1,4 +1,4 @@
-// MEMBER 2: OS command injection / in-band output.
+// OS command injection / in-band output.
 const { Router } = require('express');
 const { exec, execFile } = require('node:child_process');
 const { isIP } = require('node:net');
