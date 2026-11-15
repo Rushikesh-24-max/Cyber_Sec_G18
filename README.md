@@ -11,15 +11,7 @@ npm install
 npm start
 ```
 
-Open **http://127.0.0.1:3000**. In a second terminal run:
-
-```sh
-npm run attacker
-```
-
-The CSRF demonstration page is **http://127.0.0.1:4000**. Always use `127.0.0.1`, not a mixture of localhost and numeric IPs. Leave the main server on port 3000 for the attacker link.
-
-Both servers bind only to the loopback interface. Do not deploy this deliberately vulnerable exercise to a public host. Public source-code submission is separate from hosting the running application.
+Open **http://127.0.0.1:3000**. Run the lab on localhost only.
 
 ## Select vulnerable or protected behaviour
 
@@ -41,10 +33,12 @@ Profile sessions are in memory, so **restarting ends them**. Start a fresh profi
 - Member 2 — **Harin Savaliya (IIT2024051)**. Category: OS command injection. Variant: in-band output. Files: `modules/network/index.js`, `views/network.ejs`. Guide: `docs/member-2-command.md`.
 - Member 3 — **Akshat Agrawal (IIT2024102)**. Category: XSS. Variant: reflected. Files: `modules/search/index.js`, `views/search.ejs`. Guide: `docs/member-3-reflected.md`.
 - Member 4 — **Divyang (IIT2024107)**. Category: XSS. Variant: stored. Files: `modules/feedback/index.js`, `views/feedback.ejs`. Guide: `docs/member-4-stored.md`.
-- Member 5 — **Anish Reddy (IIT2024059)**. Category: CSRF. Variant: GET-based forged action. Files: `modules/profile/index.js`, `views/profile.ejs`, `attacker/`. Guide: `docs/member-5-csrf.md`.
+- Member 5 — **Anish Reddy (IIT2024059)**. Category: CSRF. Variant: GET-based forged action. Files: `modules/profile/index.js`, `views/profile.ejs`. Guide: `docs/member-5-csrf.md`.
 
 Shared infrastructure: `server.js`, `config.js`, `database/`, shared templates and CSS. Each member must understand, work through, and be able to explain their own implementation. Follow your course's authorship and AI-use requirements; don't claim generated code was personally written without doing the required individual work.
 
+
+See [the group presentation outline](docs/presentation.md) for the recording.
 
 ## Reset and verify
 
