@@ -45,9 +45,6 @@ Profile sessions are in memory, so **restarting ends them**. Start a fresh profi
 
 Shared infrastructure: `server.js`, `config.js`, `database/`, shared templates and CSS. Each member must understand, work through, and be able to explain their own implementation. Follow your course's authorship and AI-use requirements; don't claim generated code was personally written without doing the required individual work.
 
-## Presentation flow
-
-See `docs/presentation.md`. Allow 2–3 minutes per member: normal use → vulnerable attack → root cause → implemented fix → **same attack** blocked → normal use still works. Demonstrate only against this group's app.
 
 ## Reset and verify
 
@@ -59,21 +56,6 @@ npm test
 Reset clears feedback and restores the dummy profile name. It does not change config flags. The feedback page also has a clear-demo-feedback action. Tests use separate in-memory databases and never reset your presentation data. They exercise both modes independently of the checked-in flags.
 
 The SQL login credentials are `student` / `campus123`. Its result does not authenticate the separate profile exercise. For that exercise click **Start demo session** on `/profile`.
-
-## Limits of the exercise
-
-This is a vulnerability demonstration, not a production-ready portal. Demo-session creation, feedback clearing, and feedback posting are deliberately simple supporting actions. The CSRF mitigation is scoped to the profile update endpoint, not a claim of site-wide hardening. HttpOnly does not stop XSS from executing or issuing actions; CSP is an additional layer, not a substitute for encoding. Parameterised SQL does not replace proper password hashing in a real login system.
-
-The PDF's header says maximum four members, but its detailed instructions discuss groups larger than four. Confirm your five-member arrangement with the instructor. Its listed deadline is 15 November 2026, 23:59.
-
-## Submission checklist
-
-- Fill actual names and roll numbers in the ownership declaration.
-- Each member studies their implementation and alternative mitigation theory against the lecture slides.
-- Capture genuine before/after evidence in `docs/evidence/` (screenshots are not supplied or fabricated).
-- Record a group video with every member narrating their own part; add its link here.
-- Create the required public GitHub repository and submit repository/video links through the course page.
-- Be prepared for individual live viva questions.
 
 Video link: **to be added by group**.
 
