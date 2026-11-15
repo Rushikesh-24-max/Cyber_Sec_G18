@@ -29,6 +29,8 @@ Profile sessions are in memory, so **restarting ends them**. Start a fresh profi
 
 ## Ownership declaration
 
+See the [completed Table 3](README-ownership.md) for the assignment submission.
+
 - Member 1 — **Rushikesh Talaviya (IIT2024049)**. Category: SQL injection. Variant: authentication bypass. Files: `modules/login/index.js`, `views/login.ejs`. Guide: `docs/member-1-sql.md`.
 - Member 2 — **Harin Savaliya (IIT2024051)**. Category: OS command injection. Variant: in-band output. Files: `modules/network/index.js`, `views/network.ejs`. Guide: `docs/member-2-command.md`.
 - Member 3 — **Akshat Agrawal (IIT2024102)**. Category: XSS. Variant: reflected. Files: `modules/search/index.js`, `views/search.ejs`. Guide: `docs/member-3-reflected.md`.
